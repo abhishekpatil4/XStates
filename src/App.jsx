@@ -66,7 +66,7 @@ function App() {
     <Typography variant='h4' sx={{ textAlign: 'center', margin: '2rem 0rem' }}>Select Location</Typography>
     <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: "row", gap: 5, margin: '3rem 0rem' }}>
       <div>
-        <select style={{ minHeight: '2rem', minWidth:'20rem' }} value={selectedCountry} onChange={(event) => setSelectedCountry(event.target.value)}>
+        <select style={{ minHeight: '2rem', minWidth: '20rem' }} value={selectedCountry} onChange={(event) => setSelectedCountry(event.target.value)}>
           <option value="" disabled selected>Select Country</option>
           {
             countries?.map((country, idx) =>
@@ -76,7 +76,7 @@ function App() {
         </select>
       </div>
       <div>
-        <select style={{ minHeight: '2rem', minWidth:'20rem' }} value={selectedState} onChange={(event) => setSelectedState(event.target.value)}>
+        <select style={{ minHeight: '2rem', minWidth: '20rem' }} value={selectedState} onChange={(event) => setSelectedState(event.target.value)}>
           <option value="" disabled selected>Select State</option>
           {
             states?.map((state, idx) =>
@@ -86,7 +86,7 @@ function App() {
         </select>
       </div>
       <div>
-        <select style={{ minHeight: '2rem', minWidth:'20rem' }} value={selectedCity} onChange={(event) => setSelectedCity(event.target.value)}>
+        <select style={{ minHeight: '2rem', minWidth: '20rem' }} value={selectedCity} onChange={(event) => setSelectedCity(event.target.value)}>
           <option value="" disabled selected>Select City</option>
           {
             cities?.map((city, idx) =>
@@ -96,7 +96,10 @@ function App() {
         </select>
       </div>
     </Box>
-    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+    {
+      selectedCity !== "" && <p style={{ textAlign: 'center' }}>You selected {selectedCity}, {selectedState}, {selectedCountry}</p>
+    }
+    {/* <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       {
         selectedCountry !== "" && <Typography variant='h6' sx={{ margin: '0px 2px' }}>You selected </Typography>
       }
@@ -105,7 +108,7 @@ function App() {
       }
       <Typography variant='h6' color="gray" sx={{ margin: '0px 2px' }}>{selectedState}, </Typography>
       <Typography variant='h6' color="gray" sx={{ margin: '0px 2px' }}>{selectedCity}</Typography>
-    </Box>
+    </Box> */}
   </Container>
 }
 
