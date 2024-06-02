@@ -110,11 +110,15 @@ function App() {
         </Select>
       </FormControl>
     </Box>
-    <Box sx={{display:'flex', justifyContent:'center'}}>
-      <Typography variant='h6' sx={{margin:'0px 2px'}}>You selected </Typography>
-      <Typography variant='h5' sx={{margin:'0px 2px', fontWeight:600}}>{selectedCountry}, </Typography>
-      <Typography variant='h6' color="gray" sx={{margin:'0px 2px'}}>{selectedState}, </Typography>
-      <Typography variant='h6' color="gray" sx={{margin:'0px 2px'}}>{selectedCity}</Typography>
+    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      {
+        selectedCountry !== "" && <Typography variant='h6' sx={{ margin: '0px 2px' }}>You selected </Typography>
+      }
+      {
+        selectedCountry !== "" && <Typography variant='h5' sx={{ margin: '0px 2px', fontWeight: 600 }}>{selectedCountry}, </Typography>
+      }
+      <Typography variant='h6' color="gray" sx={{ margin: '0px 2px' }}>{selectedState}, </Typography>
+      <Typography variant='h6' color="gray" sx={{ margin: '0px 2px' }}>{selectedCity}</Typography>
     </Box>
   </Container>
 }
