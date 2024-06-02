@@ -65,50 +65,36 @@ function App() {
   return <Container>
     <Typography variant='h4' sx={{ textAlign: 'center', margin: '2rem 0rem' }}>Select Location</Typography>
     <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: "row", gap: 5, margin: '3rem 0rem' }}>
-      <FormControl sx={{ minWidth: '30rem' }}>
-        <InputLabel>Country</InputLabel>
-        <Select
-          value={selectedCountry}
-          label="Country"
-          onChange={(e) => setSelectedCountry(e.target.value)}
-        >
+      <div>
+        <select style={{ minHeight: '2rem', minWidth:'20rem' }} value={selectedCountry} onChange={(event) => setSelectedCountry(event.target.value)}>
+          <option value="" disabled selected>Select Country</option>
           {
             countries?.map((country, idx) =>
-              <MenuItem key={idx} value={country}>{country}</MenuItem>
+              <option key={idx} value={country}>{country}</option>
             )
           }
-        </Select>
-      </FormControl>
-      <FormControl sx={{ minWidth: '20rem' }}>
-        <InputLabel>State</InputLabel>
-        <Select
-          disabled={selectedCountry === ""}
-          value={selectedState}
-          label="State"
-          onChange={(e) => setSelectedState(e.target.value)}
-        >
+        </select>
+      </div>
+      <div>
+        <select style={{ minHeight: '2rem', minWidth:'20rem' }} value={selectedState} onChange={(event) => setSelectedState(event.target.value)}>
+          <option value="" disabled selected>Select State</option>
           {
             states?.map((state, idx) =>
-              <MenuItem key={idx} value={state}>{state}</MenuItem>
+              <option key={idx} value={state}>{state}</option>
             )
           }
-        </Select>
-      </FormControl>
-      <FormControl sx={{ minWidth: '20rem' }}>
-        <InputLabel>City</InputLabel>
-        <Select
-          disabled={(selectedCountry === "" || selectedState === "")}
-          value={selectedCity}
-          label="City"
-          onChange={(e) => setSelectedCity(e.target.value)}
-        >
+        </select>
+      </div>
+      <div>
+        <select style={{ minHeight: '2rem', minWidth:'20rem' }} value={selectedCity} onChange={(event) => setSelectedCity(event.target.value)}>
+          <option value="" disabled selected>Select City</option>
           {
             cities?.map((city, idx) =>
-              <MenuItem key={idx} value={city}>{city}</MenuItem>
+              <option key={idx} value={city}>{city}</option>
             )
           }
-        </Select>
-      </FormControl>
+        </select>
+      </div>
     </Box>
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
       {
